@@ -1,3 +1,4 @@
+import time 
 import random
 import statistics
 
@@ -13,6 +14,8 @@ def media(datos):
 
 
 def main():
+    inicio = time.time() # ← empieza a contar
+    
     datos = [random.randint(150, 250) for _ in range(50)]
 
     mostrar_vector(datos)
@@ -23,6 +26,8 @@ def main():
     print("Varianza = " + str(statistics.pvariance(datos)))
     print("Desviación estandar = " + str(statistics.pstdev(datos)))
 
-
+    fin = time.time() # ← termina de contar 
+    print("Tiempo de ejecución: " + str(fin - inicio) + " segundos")
+        
 if __name__ == "__main__":
     main()
